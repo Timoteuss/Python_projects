@@ -1,16 +1,46 @@
-# This is a sample Python script.
+from crud_1.create_1 import create_user
+from crud_1.read_1 import user_info, all_users_info
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+user_emails = []
+users_storage = {}
 
+while True:
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    action = input('Please enter create or read, or update, or delete actions: ')
 
+    if action == 'create':
+        print("action =", action)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+        email = input('Email: ')
+        name = input('Name: ')
+        password = input('Password: ')
+        phone = input('Phone: ')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        create_user(email,
+                    name,
+                    password,
+                    phone,
+                    user_emails,
+                    users_storage)
+
+        print('user_emails = ', user_emails)
+        print('user_storage = ', users_storage)
+
+    elif action == 'read_all':
+
+        print("action =", action)
+        all_users_info(users_storage)
+
+    elif action == 'read_user':
+
+        user_e = input("Enter user email: ")
+        message = user_info(user_e, user_emails, users_storage)
+
+        print("action =", action)
+        print('User:', message)
+
+    elif action == 'update':
+        print("action =", action)
+
+    elif action == 'delete':
+        print("action =", action)

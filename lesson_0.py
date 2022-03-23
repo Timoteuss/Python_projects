@@ -24,3 +24,4 @@ result = e + str(g)
 print(result)
 print('Type d =', type(g))
 print(e[0] + (e[1] * g) + e[2] + e[3] + e[4] + e[5])
+

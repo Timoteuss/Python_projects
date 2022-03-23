@@ -1,4 +1,7 @@
 import csv
+import names
+import random
+
 # Python CSV
 #
 # Вариант 1: Генерировать данные на лету, не создавая предварительных списков.
@@ -36,6 +39,7 @@ import csv
 # d) Для имён из файла nne_2.csv забрать даты из nne_2.csv которые были с этими именами в nne_2.csv.
 # e) Остальные даты генерировать рандомно.
 # f) Добавить и заполнить (можно рандомно) столбы Email, Phone, Gender, Salary.
+
 file_path = "C:/Users/Timofey/PycharmProjects/Kurses/text_files/"
 csv_file_title = "empty.csv"
 file_title = file_path + csv_file_title
@@ -46,17 +50,28 @@ with open(file_digits, 'w') as f:
 
         for i in range(0, 151):
 
-        f.write(str(i))
-        f.write('\n')
+                f.write(str(i))
+                f.write('\n')
 
-file_names = "names.csv"
-file_title = file_path + file_names
+file_names = file_path + "names.csv"
 
-with open(file_title, 'w') as f:
+with open(file_names, 'w') as f:
 
+        for n in range(0, 100):
 
+                f.writelines(names.get_first_name())
+                f.write("\n")
 
-# with open(file_title, 'a', encoding='utf-8') as f:
+file_emails = file_path + "emals.csv"
+
+with open(file_emails, 'w') as f:
+
+        for n in range(0, 100):
+
+                f.writelines(names.get_first_name()+ str(n) +'@gmail.com')
+                f.write("\n")
+
+# with open(file_names, 'a', encoding='utf-8') as f:
 #
 #     # f.writelines(ll)
 #     # f.write('\n'.join(ll))

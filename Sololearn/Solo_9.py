@@ -142,14 +142,16 @@ for v in enumerate(numb):
 
 
 # Задача "Самое длинное слово"
-# txt = input()
-txt = "Rnter a filename and what do you want to do with this differences"
+# Программа получает текст на ввод и выдает самое длинное слово из введенного текста.
+txt = input()
+# txt = "Rnter a filename and what do you want to do with this differences"
 spl = txt.split(" ")
 y = []
 
 for i in spl:
     x = len(i)
     y.append(x)
+
 m = max(y)
 for i in spl:
     if len(i) == m:

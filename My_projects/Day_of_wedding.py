@@ -1,19 +1,27 @@
 from _datetime import datetime, timedelta
 
+
 now = datetime.now()
 wedding_day = datetime(2022, 6, 24)
 wedding_time = timedelta.days
 period = wedding_day - now
 print("Сейчас", now)
-den = (1, 21, 31, 41, 51, 61, 71, 81)
-dnya = (2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64, 72, 73, 74, 82, 83, 84)
+period_days = period.days
 
-if period.days in den:
-    print(f"До свадьбы остался {period.days} день!")
-elif period.days in dnya:
-    print(f"До свадьбы осталось {period.days} дня!")
+if period_days > 0:
+    if str(period_days)[-1] == "1":
+        print(f"До свадьбы остался {period_days} день!")
+    elif str(period_days)[-1] == "2" or str(period_days)[-1] == "3" or str(period_days)[-1] == "4":
+        print(f"До свадьбы осталось {period_days} дня!")
+    else:
+        print(f"До свадьбы осталось {period_days} дней!")
 else:
-    print(f"До свадьбы осталось {period.days} дней!")
-
+    period_days *= -1
+    if str(period_days)[-1] == "1":
+        print(f"Cо свадьбы прошел {period_days} день!")
+    elif str(period_days)[-1] == "2" or str(period_days)[-1] == "3" or str(period_days)[-1] == "4":
+        print(f"Cо свадьбы прошло {period_days} дня!")
+    else:
+        print(f"Cо свадьбы прошло {period_days} дней!")
 
 # print(wedding_time)

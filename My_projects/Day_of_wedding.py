@@ -1,11 +1,11 @@
-from _datetime import datetime, timedelta
-
+from _datetime import datetime
+# from _datetime import timedelta
 
 now = datetime.now()
 wedding_day = datetime(2022, 6, 24)
-wedding_time = timedelta.days
-period = wedding_day - now
-print("Сейчас", now)
+# wedding_time = timedelta.days
+period = now - wedding_day
+print("Сейчас:", now)
 period_days = period.days
 
 if period_days > 0:
